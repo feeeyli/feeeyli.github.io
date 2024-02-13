@@ -11,11 +11,14 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.5.4",
+    "@astrojs/mdx": "^2.1.1",
+    "@astropub/md": "^0.4.0",
     "astro": "^4.3.6",
     "lucide-astro": "^0.330.0",
     "typescript": "^5.3.3"
   },
   "devDependencies": {
+    "@unocss/preset-web-fonts": "^0.58.5",
     "@unocss/reset": "^0.58.5",
     "unocss": "^0.58.5"
   }

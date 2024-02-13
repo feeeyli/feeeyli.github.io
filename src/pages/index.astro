@@ -1,10 +1,15 @@
 ---
 import { getCollection } from 'astro:content';
-import { Link2, Tags } from 'lucide-astro';
+import { Cake, Link2, Tags } from 'lucide-astro';
 import Post from '../components/Post.astro';
 import Layout from '../layouts/Layout.astro';
 
-const posts = await getCollection('posts');
+const mdPosts = await getCollection('posts');
+
+const posts = mdPosts.map(post => ({
+	...post.data,
+	content: post.body
+}))
 
 ---
 
@@ -40,6 +45,11 @@ const posts = await getCollection('posts');
 						</span>
 					</div>
 					<p class="text-sm mb-3 text-[#0f1419]">
+						oi, bem-vinde ao meu site 👋
+						<br />
+						aqui tu vai encontrar coisas sobre mim, sobre meus gostos e meus projetos ₊˚
+					</p>
+					<!-- <p class="text-sm mb-3 text-[#0f1419]">
 						mestre de rpg, atriz e escritore ₊˚
 						<br /> 
 						criadora do:
@@ -49,10 +59,13 @@ const posts = await getCollection('posts');
 						&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://multifrogg.vercel.app" class="text-primary hover:underline">MultiFrogg</a> ₊˚
 						<br />
 						&nbsp;&nbsp;&nbsp;&nbsp;e <a href="https://multiqsmp.vercel.app" class="text-primary hover:underline">MultiQSMP</a> ₊˚
-					</p>
+					</p> -->
 					<div class="text-sm mb-3 flex flex-wrap gap-3 text-[#536471]">
 						<span class="flex items-center gap-1">
 							<Tags size="1rem" /> elu/ela
+						</span>
+						<span class="flex items-center gap-1">
+							<Cake size="1rem" /> 17y
 						</span>
 						<span class="flex items-center gap-1">
 							<Link2 size="1rem" />
@@ -67,10 +80,7 @@ const posts = await getCollection('posts');
 				</div>
 			</header>
 			<ul>
-				{posts.map((post: any) => <Post post={{
-					content: post.body,
-					...post.data
-				}} />)}
+				{posts.map((post: any) => <Post post={post} />)}
 			</ul>
 		</div>
 	</main>

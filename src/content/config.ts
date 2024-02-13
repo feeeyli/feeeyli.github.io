@@ -9,9 +9,9 @@ const postsCollection = defineCollection({
       likes: z.number(),
       views: z.number(),
     }),
-    has_reply: z.boolean(),
-    images: z.array(z.string()).optional(),
+    images: z.array(z.array(z.string())).optional(),
     link: z.string().optional(),
+    id: z.string().optional(),
   }),
 });
 

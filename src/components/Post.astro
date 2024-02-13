@@ -1,4 +1,5 @@
 ---
+import { Markdown } from "@astropub/md";
 import { BarChart2, Bookmark, Heart, MessageCircle, Repeat2, Share } from "lucide-astro";
 
 interface Props {
@@ -10,15 +11,17 @@ interface Props {
       likes: number;
       views: number;
     };
-    has_reply: boolean;
-    images: string[]
+    images: string[][]
     link?: string;
+    id?: string;
   };
 }
 
-const { post: { content, stats, has_reply, images, link } } = Astro.props;
+const { post: { content, stats, images = [], id } } = Astro.props;
 
-function nFormatter(num: number, digits: number) {
+const posts = content.split("---")
+
+function nFormatter(num: number) {
   const lookup = [
     { value: 1, symbol: "" },
     { value: 1e3, symbol: "mil" },
@@ -30,14 +33,16 @@ function nFormatter(num: number, digits: number) {
   ];
   const regexp = /\.0+$|(?<=\.[0-9]*[1-9])0+$/;
   const item = lookup.findLast(item => num >= item.value);
-  return item ? (num / item.value).toFixed(digits).replace(regexp, "").concat(" ").concat(item.symbol) : "0";
+  return item ? (num / item.value).toFixed(0).replace(regexp, "").concat(" ").concat(item.symbol) : "0";
 }
+
 ---
 
-<a href={link ?? ""} target="_blank">
-  <li class="border-t border-t-[#eff3f4] hover:bg-primary/5 transition-colors">
-    <div class:list={["px-4 pt-3 flex", {"pb-3": has_reply}]}>
-      <div class="mr-3 flex flex-col items-center gap-1">
+<li class="border-t border-t-[#eff3f4] cursor-default" id={id}>
+  {posts.map((post, i) => (
+    <div class="px-4 flex hover:bg-primary/2.5 transition-colors">
+      <div class:list={["mr-3 flex flex-col items-center gap-1", { "pt-3": i === 0 }]}>
+        {i > 0 && <span class="w-[2px] rounded-b-full h-2 bg-text/10"></span>}
         <img
           alt="profile"
           width={40}
@@ -45,11 +50,11 @@ function nFormatter(num: number, digits: number) {
           src="https://pbs.twimg.com/profile_images/1756076087195451392/VL53NZJk_400x400.jpg"
           class="rounded-full min-w-[2.5rem] aspect-square select-none"
         />
-        {has_reply && (
-          <span class="w-[2px] rounded-t-full h-full bg-[#333639]"></span>
+        {i < posts.length - 1 && (
+          <span class="w-[2px] rounded-t-full h-full bg-text/10"></span>
         )}
       </div>
-      <div class="w-full">
+      <div class="w-full pt-3">
         <header class="mb-[2px]">
           <span class="text-sm font-bold">
             luna 🐸🏳️‍⚧️
@@ -58,12 +63,14 @@ function nFormatter(num: number, digits: number) {
             @feeeyli
           </span>
         </header>
-        <div class="text-sm mb-3 whitespace-pre-wrap">{content}</div>
-        {images.length > 0 && (
+        <div class:list={["text-sm mb-3 whitespace-pre-line [&_a]:text-primary [&_strong>a]:text-text hover:[&_a]:underline [&_h2]:text-base [&_h2]:font-600 [&_h3]:text-lg [&_h3]:font-700 [&_ul]:whitespace-normal [&_ul]:list-disc [&_ul]:space-y-2 [&_li]:ml-6 [&_li>a]:-ml-1.5", { "[&_img]:inline [&_img]:w-6 [&_img]:ml-1.5": post.startsWith("\n### Sobre mim") }]}>
+          <Markdown of={post} />
+        </div>
+        {images[i] && images[i].length > 0 && (
           <section
-            class:list={["grid aspect-video w-full grid-cols-2 grid-rows-2 gap-2 mb-3", ["", "[&>img]:row-span-2 [&>img]:col-span-2 !aspect-auto", "[&>img]:row-span-2", "even:[&>img]:row-span-2", ""][images.length]]}
+            class:list={["grid aspect-video w-full grid-cols-2 grid-rows-2 gap-2 mb-3", ["", "[&>img]:row-span-2 [&>img]:col-span-2 !aspect-auto", "[&>img]:row-span-2", "even:[&>img]:row-span-2", ""][images[i].length]]}
           >
-            {images.map((pic, i) => (
+            {images[i].map((pic, i) => (
               <img
                 alt={String(i + 1)}
                 width={254}
@@ -80,30 +87,30 @@ function nFormatter(num: number, digits: number) {
               <MessageCircle size="1.125rem" />
               <div class="absolute aspect-square -inset-2 group-hover:bg-[#1d9bf01a] rounded-full transition-colors bg-transparent"></div>
             </div>{" "}
-            {stats.comments}
+            {Math.floor(stats.comments * ( 1 - i * 0.15 ))}
           </button>
           <button class="select-none flex items-center gap-2 group hover:text-[#00BA7C] transition-colors">
             <div class="relative">
               <Repeat2 size="1.125rem" />
               <div class="absolute aspect-square -inset-2 group-hover:bg-[#00BA7C1a] rounded-full transition-colors bg-transparent"></div>
             </div>{" "}
-            {nFormatter(stats.reposts, 2)}
+            {nFormatter(Math.floor(stats.reposts * ( 1 - i * 0.15 )))}
           </button>
           <button class="select-none flex items-center gap-2 group hover:text-[#F91880] transition-colors">
             <div class="relative">
               <Heart size="1.125rem" />
               <div class="absolute aspect-square -inset-2 group-hover:bg-[#F918801a] rounded-full transition-colors bg-transparent"></div>
             </div>{" "}
-            {nFormatter(stats.likes, 2)}
+            {nFormatter(Math.floor(stats.likes * ( 1 - i * 0.15 )))}
           </button>
           <button class="select-none flex items-center gap-2 group hover:text-[#1d9bf0] transition-colors">
             <div class="relative">
               <BarChart2 size="1.125rem" />
               <div class="absolute aspect-square -inset-2 group-hover:bg-[#1d9bf01a] rounded-full transition-colors bg-transparent"></div>
             </div>{" "}
-            {nFormatter(stats.views, 2)}
+            {nFormatter(Math.floor(stats.views * ( 1 - i * 0.15 )))}
           </button>
-          <div class="space-x-2 max-sm:hidden">
+          <div class="sm:space-x-2 max-sm:hidden">
             <button class="select-none group hover:text-[#1d9bf0] relative">
               <Bookmark size="1.125rem" />
               <div class="absolute aspect-square -inset-2 group-hover:bg-[#1d9bf01a] rounded-full transition-colors bg-transparent"></div>
@@ -116,5 +123,5 @@ function nFormatter(num: number, digits: number) {
         </footer>
       </div>
     </div>
-  </li>
-</a>
+  ))}  
+</li>

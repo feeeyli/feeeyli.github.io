@@ -1,4 +1,4 @@
-import { defineConfig } from "unocss";
+import { defineConfig, presetUno, presetWebFonts } from "unocss";
 
 export default defineConfig({
   theme: {
@@ -9,8 +9,14 @@ export default defineConfig({
       secondary: "#a3e588",
       accent: "#82eb57",
     },
-    fontFamily: {
-      inter: ['"Inter"', "sans-serif", "system-ui"],
-    },
   },
+  presets: [
+    presetUno(),
+    presetWebFonts({
+      provider: "google", // default provider
+      fonts: {
+        sans: "Noto Sans",
+      },
+    }),
+  ],
 });
