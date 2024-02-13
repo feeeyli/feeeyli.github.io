@@ -1,0 +1,120 @@
+---
+import { BarChart2, Bookmark, Heart, MessageCircle, Repeat2, Share } from "lucide-astro";
+
+interface Props {
+	post: {
+    content: string;
+    stats: {
+      comments: number;
+      reposts: number;
+      likes: number;
+      views: number;
+    };
+    has_reply: boolean;
+    images: string[]
+    link?: string;
+  };
+}
+
+const { post: { content, stats, has_reply, images, link } } = Astro.props;
+
+function nFormatter(num: number, digits: number) {
+  const lookup = [
+    { value: 1, symbol: "" },
+    { value: 1e3, symbol: "mil" },
+    { value: 1e6, symbol: "M" },
+    { value: 1e9, symbol: "G" },
+    { value: 1e12, symbol: "T" },
+    { value: 1e15, symbol: "P" },
+    { value: 1e18, symbol: "E" }
+  ];
+  const regexp = /\.0+$|(?<=\.[0-9]*[1-9])0+$/;
+  const item = lookup.findLast(item => num >= item.value);
+  return item ? (num / item.value).toFixed(digits).replace(regexp, "").concat(" ").concat(item.symbol) : "0";
+}
+---
+
+<a href={link ?? ""} target="_blank">
+  <li class="border-t border-t-[#eff3f4] hover:bg-primary/5 transition-colors">
+    <div class:list={["px-4 pt-3 flex", {"pb-3": has_reply}]}>
+      <div class="mr-3 flex flex-col items-center gap-1">
+        <img
+          alt="profile"
+          width={40}
+          height={40}
+          src="https://pbs.twimg.com/profile_images/1756076087195451392/VL53NZJk_400x400.jpg"
+          class="rounded-full min-w-[2.5rem] aspect-square select-none"
+        />
+        {has_reply && (
+          <span class="w-[2px] rounded-t-full h-full bg-[#333639]"></span>
+        )}
+      </div>
+      <div class="w-full">
+        <header class="mb-[2px]">
+          <span class="text-sm font-bold">
+            luna 🐸🏳️‍⚧️
+          </span>
+          <span class="text-sm font-normal text-[#536471] ml-1">
+            @feeeyli
+          </span>
+        </header>
+        <div class="text-sm mb-3 whitespace-pre-wrap">{content}</div>
+        {images.length > 0 && (
+          <section
+            class:list={["grid aspect-video w-full grid-cols-2 grid-rows-2 gap-2 mb-3", ["", "[&>img]:row-span-2 [&>img]:col-span-2 !aspect-auto", "[&>img]:row-span-2", "even:[&>img]:row-span-2", ""][images.length]]}
+          >
+            {images.map((pic, i) => (
+              <img
+                alt={String(i + 1)}
+                width={254}
+                height={254 / 1.59}
+                src={pic}
+                class="h-full w-full rounded-md border border-border object-cover select-none"
+              />
+            ))}
+          </section>
+        )}
+        <footer class="flex justify-between text-[#536471] text-sm mb-3">
+          <button class="select-none flex items-center gap-2 group hover:text-[#1d9bf0] transition-colors">
+            <div class="relative">
+              <MessageCircle size="1.125rem" />
+              <div class="absolute aspect-square -inset-2 group-hover:bg-[#1d9bf01a] rounded-full transition-colors bg-transparent"></div>
+            </div>{" "}
+            {stats.comments}
+          </button>
+          <button class="select-none flex items-center gap-2 group hover:text-[#00BA7C] transition-colors">
+            <div class="relative">
+              <Repeat2 size="1.125rem" />
+              <div class="absolute aspect-square -inset-2 group-hover:bg-[#00BA7C1a] rounded-full transition-colors bg-transparent"></div>
+            </div>{" "}
+            {stats.reposts}
+          </button>
+          <button class="select-none flex items-center gap-2 group hover:text-[#F91880] transition-colors">
+            <div class="relative">
+              <Heart size="1.125rem" />
+              <div class="absolute aspect-square -inset-2 group-hover:bg-[#F918801a] rounded-full transition-colors bg-transparent"></div>
+            </div>{" "}
+            {stats.likes}
+          </button>
+          <button class="select-none flex items-center gap-2 group hover:text-[#1d9bf0] transition-colors">
+            <div class="relative">
+              <BarChart2 size="1.125rem" />
+              <div class="absolute aspect-square -inset-2 group-hover:bg-[#1d9bf01a] rounded-full transition-colors bg-transparent"></div>
+            </div>{" "}
+            {nFormatter(stats.views, 2)}
+          </button>
+          <div class="space-x-2 max-sm:hidden">
+            <button class="select-none group hover:text-[#1d9bf0] relative">
+              <Bookmark size="1.125rem" />
+              <div class="absolute aspect-square -inset-2 group-hover:bg-[#1d9bf01a] rounded-full transition-colors bg-transparent"></div>
+            </button>
+            <button class="select-none group hover:text-[#1d9bf0] relative">
+              <Share size="1.125rem" />
+              <div class="absolute aspect-square -inset-2 group-hover:bg-[#1d9bf01a] rounded-full transition-colors bg-transparent"></div>
+            </button>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </li>
+</a>

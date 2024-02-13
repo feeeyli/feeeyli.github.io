@@ -1,0 +1,77 @@
+---
+import { getCollection } from 'astro:content';
+import { Link2, Tags } from 'lucide-astro';
+import Post from '../components/Post.astro';
+import Layout from '../layouts/Layout.astro';
+
+const posts = await getCollection('posts');
+
+---
+
+<Layout title="Welcome to Astro.">
+	<main class="flex min-h-screen flex-col items-center">
+		<div class="max-w-[37rem] border-x border-x-[#eff3f4]">
+			<header>
+				<div class="relative">
+					<img
+						alt="banner"
+						src="https://pbs.twimg.com/profile_banners/1503016829379399685/1707516121/1500x500"
+						width={1500}
+						height={500}
+						class="aspect-[1500/500] w-[37rem] select-none"
+					/>
+					<div class="absolute left-4 bottom-0 border-4 border-background inline-block rounded-full translate-y-1/2">
+						<img
+							alt="profile"
+							src="https://pbs.twimg.com/profile_images/1756076087195451392/VL53NZJk_400x400.jpg"
+							width={400}
+							height={400}
+							class="rounded-full aspect-square w-32 select-none"
+						/>
+					</div>
+				</div>
+				<div class="mt-20 px-4 mb-4">
+					<div class="mt-1 mb-3">
+						<h1 class="text-xl text-[#0f1419] font-black">
+							luna 🐸🏳️‍⚧️
+						</h1>
+						<span class="text-[#536471] text-sm">
+							@feeeyli
+						</span>
+					</div>
+					<p class="text-sm mb-3 text-[#0f1419]">
+						mestre de rpg, atriz e escritore ₊˚
+						<br /> 
+						criadora do:
+						<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://froggsmp.vercel.app" class="text-primary hover:underline">Site do FroggSMP</a> ₊˚
+						<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://multifrogg.vercel.app" class="text-primary hover:underline">MultiFrogg</a> ₊˚
+						<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;e <a href="https://multiqsmp.vercel.app" class="text-primary hover:underline">MultiQSMP</a> ₊˚
+					</p>
+					<div class="text-sm mb-3 flex flex-wrap gap-3 text-[#536471]">
+						<span class="flex items-center gap-1">
+							<Tags size="1rem" /> elu/ela
+						</span>
+						<span class="flex items-center gap-1">
+							<Link2 size="1rem" />
+							<a
+								href="twitter.com/feeeyli"
+								class="text-primary"
+							>
+								twitter.com/feeeyli
+							</a>
+						</span>
+					</div>
+				</div>
+			</header>
+			<ul>
+				{posts.map((post: any) => <Post post={{
+					content: post.body,
+					...post.data
+				}} />)}
+			</ul>
+		</div>
+	</main>
+</Layout>
