@@ -87,14 +87,14 @@ function nFormatter(num: number, digits: number) {
               <Repeat2 size="1.125rem" />
               <div class="absolute aspect-square -inset-2 group-hover:bg-[#00BA7C1a] rounded-full transition-colors bg-transparent"></div>
             </div>{" "}
-            {stats.reposts}
+            {nFormatter(stats.reposts, 2)}
           </button>
           <button class="select-none flex items-center gap-2 group hover:text-[#F91880] transition-colors">
             <div class="relative">
               <Heart size="1.125rem" />
               <div class="absolute aspect-square -inset-2 group-hover:bg-[#F918801a] rounded-full transition-colors bg-transparent"></div>
             </div>{" "}
-            {stats.likes}
+            {nFormatter(stats.likes, 2)}
           </button>
           <button class="select-none flex items-center gap-2 group hover:text-[#1d9bf0] transition-colors">
             <div class="relative">

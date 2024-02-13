@@ -1,9 +1,9 @@
 ---
 stats:
-  comments: 180
-  reposts: 150
-  likes: 160
-  views: 170
+  comments: 17
+  reposts: 115
+  likes: 569
+  views: 24000
 has_reply: false
 images:
   - https://pbs.twimg.com/media/GEPB6-PX0AA-fci?format=png&name=large
