@@ -30,6 +30,8 @@ Atualmente eu tenho 4 projetos lançados:
 - [QSMP Conexões](#qsmpconexoes), jogue Conexo com tema de QSMP
 - [MultiQSMP](#multiqsmp), assista varios POVs do QSMP ao mesmo tempo
 
+E além disso eu trabalho como dev pra [Wiki do FroggSMP](https://frogg-smp.fandom.com/pt-br/wiki/)
+
 ---
 
 ## Minhas redes sociais
