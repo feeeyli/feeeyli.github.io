@@ -14,8 +14,8 @@ Eu gosto de narrar RPG, escrever historias e criar universos.
 Faço curso de teatro (e sou **quase** oficialmente atriz).
 Sou programadora Front-end e aspirante a UI designer desde 2019.
 
-Gosto de assistir **[Ordem Paranormal](https://twitter.com/OrdemParanormal)**, **[QSMP](https://twitter.com/QSMPGlobal)** e **[FroggSMP](https://twitter.com/FroggersTV)**
-Minha serie favorita é **The Wilds** (cancelada 😭), minha animação favorita é **The Owl House** (cancelada também) e meu filme favorito é **Alita: Anjo de Combate**.
+Gosto de assistir **[Ordem Paranormal](https://twitter.com/OrdemParanormal)** e **[FroggSMP](https://twitter.com/FroggersTV)**
+Minha serie favorita é **The Wilds** (cancelada 😭), minha animação favorita é **The Owl House** (cancelada também), meu filme favorito é **Alita: Anjo de Combate** e minha trilogia favorita é **Star Wars**.
 
 Meus países: ![Bissexual](/lgbt-flags/bi.svg "Bandeira Bissexual") ![Trans](/lgbt-flags/trans.svg "Bandeira Trans") ![Gênero fluido](/lgbt-flags/gender-fluid.svg "Bandeira Gênero fluido") ![Não-binario](/lgbt-flags/non-binary.svg "Bandeira Não-binario") ![Assexual](/lgbt-flags/asexual.svg "Bandeira Assexual") ![Arromantico](/lgbt-flags/arromantic.svg "Bandeira Arromantica")
 
