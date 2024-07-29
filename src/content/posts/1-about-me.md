@@ -12,7 +12,7 @@ Me chamo Luna ou feyli (com **f** minusculo!)
 
 Eu gosto de narrar RPG, escrever historias e criar universos.
 Faço curso de teatro (e sou **quase** oficialmente atriz).
-Sou programadora Front-end e aspirante a UI designer desde 2019.
+Sou programadora Front-end e Minecraft Modded.
 
 Gosto de assistir **[Ordem Paranormal](https://twitter.com/OrdemParanormal)** e **[FroggSMP](https://twitter.com/FroggersTV)**
 Minha serie favorita é **The Wilds** (cancelada 😭), minha animação favorita é **The Owl House** (cancelada também), meu filme favorito é **Alita: Anjo de Combate** e minha trilogia favorita é **Star Wars**.
@@ -26,11 +26,10 @@ Meus países: ![Bissexual](/lgbt-flags/bi.svg "Bandeira Bissexual") ![Trans](/lg
 Atualmente eu tenho 4 projetos lançados:
 
 - [Site do FroggSMP](#froggsmp), encontre diversas informações sobre o FroggSMP em um único lugar
+- [Mod de Festa Junina](#festa-junina) feito para o evento do FroggSMP
 - [MultiFrogg](#multifrogg), assista varios POVs do FroggSMP ao mesmo tempo
-- [QSMP Conexões](#qsmpconexoes), jogue Conexo com tema de QSMP
-- [MultiQSMP](#multiqsmp), assista varios POVs do QSMP ao mesmo tempo
 
-E além disso eu trabalho como dev pra [Wiki do FroggSMP](https://frogg-smp.fandom.com/pt-br/wiki/)
+E além disso eu trabalho como dev pra [Wiki do FroggSMP](https://froggsmp.vercel.app/wiki/)
 
 ---
 
