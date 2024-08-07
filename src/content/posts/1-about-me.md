@@ -23,13 +23,15 @@ Meus países: ![Bissexual](/lgbt-flags/bi.svg "Bandeira Bissexual") ![Trans](/lg
 
 ## Meus projetos
 
-Atualmente eu tenho 4 projetos lançados:
+Atualmente eu tenho 1 projetos lançados:
 
 - [Site do FroggSMP](#froggsmp), encontre diversas informações sobre o FroggSMP em um único lugar
 - [Mod de Festa Junina](#festa-junina) feito para o evento do FroggSMP
 - [MultiFrogg](#multifrogg), assista varios POVs do FroggSMP ao mesmo tempo
 
-E além disso eu trabalho como dev pra [Wiki do FroggSMP](https://froggsmp.vercel.app/wiki/)
+Eu também trabalho como dev pra [Wiki do FroggSMP](https://froggsmp.vercel.app/wiki/)
+
+Além disso eu faço [renders de minecraft](#renders).
 
 ---
 

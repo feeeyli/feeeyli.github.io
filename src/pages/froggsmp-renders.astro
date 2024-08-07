@@ -1,0 +1,83 @@
+---
+import { ArrowLeft } from "lucide-astro";
+import Layout from "../layouts/Layout.astro";
+
+type Render = {
+  name: string;
+  display_name: string;
+  background: `#${string}`;
+  expand?: boolean;
+}
+
+const RENDERS: Render[][] = [
+  [
+    { display_name: "Scott", name: "scott", background: "#d7887b", expand: true },
+    {display_name: "Yui", name: "yui", background: "#b45046"},
+    {display_name: "Rafly", name: "rafly", background: "#e3776b"}
+  ],
+  [
+    { display_name: "Amelie", name: "amelie", background: "#8bc6fe", expand: true },
+    {display_name: "Yumi e Enderson", name: "yumi_enderson", background: "#61aab8"},
+    {display_name: "Yna", name: "yna", background: "#afd9ef"}
+  ],
+  [
+    { display_name: "Áries", name: "aries", background: "#9eaf83", expand: true },
+    {display_name: "Akino", name: "akino", background: "#da616f"},
+    {display_name: "Frogg", name: "frogg", background: "#84b66d"}
+  ],
+  [
+    { display_name: "Myn", name: "myn", background: "#f6e3e5", expand: true },
+    {display_name: "Guaxi", name: "guaxi", background: "#E1CBDC"},
+    {display_name: "Umild", name: "umild", background: "#6E98CE"}
+  ],
+  [
+    { display_name: "Yume", name: "yume", background: "#e07182", expand: true },
+    {display_name: "Keller", name: "keller", background: "#6c5545"},
+    { display_name: "Akino (detetive)", name: "akino_detetive", background: "#a38a74"}
+  ],
+  [
+    { display_name: "Pierre", name: "pierre", background: "#b3b9fe", expand: true },
+    {display_name: "Flopi", name: "flopi", background: "#ffdd89"},
+    {display_name: "Ameizim", name: "ameizim", background: "#dc864d"}
+  ]
+]
+---
+
+<Layout title="Projetos | FroggSMP Renders">
+  <main class="flex min-h-screen flex-col items-center pb-16 pt-4 gap-8">
+    <header class="w-full px-4 sticky top-0">
+      <a href="/" class="flex items-center gap-2 group h-10 w-10"><ArrowLeft size="1rem" class="group-hover:-translate-x-0.5 transition-transform"/></a>
+    </header>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 px-4 max-w-3xl">
+      {RENDERS.map((group, index) => (
+        <div class:list={["grid grid-cols-2 gap-4 [grid-template-areas:'a_a''b_c']", {"md:[grid-template-areas:'b_c''a_a']": index % 2 === 1}]}>
+          {group.map(render => (
+            <img
+              src={`/renders/uniques/${render.name}.png`}
+              alt={"Render de " + render.display_name}
+              style={`background-color:${render.background};`}
+              class:list={["render", {"[grid-area:a]": render.expand}]} 
+            />
+          ))}
+        </div>
+      ))}
+    </div>
+  </main>
+</Layout>
+
+<style>
+.render {
+  aspect-ratio: 1 / 1;
+  transition: transform 0.2s ease-out;
+}
+
+.render.--size-2 {
+  grid-row: span 2 / span 2;
+  grid-column: span 2 / span 2;
+}
+
+.render.--size-4 {
+  grid-column: span 4 / span 4;
+  aspect-ratio: 4 / 1.5;
+}
+</style>

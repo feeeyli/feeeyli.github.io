@@ -1,0 +1,52 @@
+body {
+  @apply h-screen;
+}
+
+.modal {
+  @apply bg-transparent text-[inherit] duration-200 ease-out pointer-events-none fixed inset-0 m-0 grid h-full max-h-none w-full max-w-none justify-items-center p-0 opacity-0;
+  background-color: transparent;
+  color: inherit;
+  transition-property: transform, opacity, visibility;
+  overflow-y: hidden;
+  overscroll-behavior: contain;
+  &:not(dialog:not(.modal-open)),
+  &::backdrop {
+    background-color: #0006;
+    animation: modal-pop 0.2s ease-out;
+  }
+}
+.modal-backdrop {
+  @apply -z-[1] col-start-1 row-start-1 grid self-stretch justify-self-stretch text-transparent;
+}
+.modal-box {
+  @apply bg-slate-100 rounded-b-sm rounded-t-sm col-start-1 row-start-1 w-11/12 max-w-lg scale-90 transform p-6 transition duration-200 ease-out;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.modal-open .modal-box,
+.modal-toggle:checked + .modal .modal-box,
+.modal:target .modal-box,
+.modal[open] .modal-box {
+  @apply translate-y-0 scale-100;
+}
+.modal-open,
+.modal:target,
+.modal-toggle:checked + .modal,
+.modal[open] {
+  @apply pointer-events-auto visible opacity-100;
+}
+.modal-box {
+  max-height: calc(100vh - 5em);
+}
+:where(.modal) {
+  @apply items-center;
+}
+.modal-action {
+  @apply mt-6 justify-end space-x-2;
+}
+@keyframes modal-pop {
+  0% {
+    opacity: 0;
+  }
+}

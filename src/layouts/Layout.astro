@@ -1,4 +1,7 @@
 ---
+import '@fontsource-variable/noto-sans';
+import "../styles/globals.css";
+
 interface Props {
 	title: string;
 }
@@ -16,7 +19,7 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="bg-background font-sans">
+	<body class="bg-background font-sans h-screen">
 		<slot />
 	</body>
 </html>

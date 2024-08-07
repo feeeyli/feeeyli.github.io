@@ -10,7 +10,7 @@ images:
 link: https://x.com/feeeyli/status/1817360133489316329
 id: festa-junina
 ---
-O mod da Festa Junina.
+**O mod da Festa Junina.**
 
 Eu e Melle contruimos juntes um mod para o [#FroggSMP](https://twitter.com/hashtag/FroggSMP) que adicionar itens como:
 
