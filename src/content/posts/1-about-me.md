@@ -17,7 +17,7 @@ Sou programadora Front-end e Minecraft Modded.
 Gosto de assistir **[Ordem Paranormal](https://twitter.com/OrdemParanormal)** e **[FroggSMP](https://twitter.com/FroggersTV)**
 Minha serie favorita é **The Wilds** (cancelada 😭), minha animação favorita é **The Owl House** (cancelada também), meu filme favorito é **Alita: Anjo de Combate** e minha trilogia favorita é **Star Wars**.
 
-Meus países: ![Bissexual](/lgbt-flags/bi.svg "Bandeira Bissexual") ![Trans](/lgbt-flags/trans.svg "Bandeira Trans") ![Gênero fluido](/lgbt-flags/gender-fluid.svg "Bandeira Gênero fluido") ![Não-binario](/lgbt-flags/non-binary.svg "Bandeira Não-binario") ![Assexual](/lgbt-flags/asexual.svg "Bandeira Assexual") ![Arromantico](/lgbt-flags/arromantic.svg "Bandeira Arromantica")
+Meus países: ![Bissexual](/lgbt-flags/bi.svg "Bandeira Bissexual") ![Trans](/lgbt-flags/trans.svg "Bandeira Trans") ![Gênero fluido](/lgbt-flags/gender-fluid.svg "Bandeira Gênero fluido") ![Não-binario](/lgbt-flags/non-binary.svg "Bandeira Não-binario")
 
 ---
 
