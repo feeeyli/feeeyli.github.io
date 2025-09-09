@@ -11,7 +11,7 @@ stats:
 Me chamo Luna ou feyli (com **f** minusculo!)
 
 Eu gosto de narrar RPG, escrever historias e criar universos.
-Faço curso de teatro (e sou **quase** oficialmente atriz).
+Sou formada em teatro, sou atriz e iluminadora.
 Sou programadora Front-end e Minecraft Modded.
 
 Gosto de assistir **[Ordem Paranormal](https://twitter.com/OrdemParanormal)** e **[FroggSMP](https://twitter.com/FroggersTV)**
