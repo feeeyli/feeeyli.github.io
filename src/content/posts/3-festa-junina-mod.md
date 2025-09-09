@@ -21,3 +21,7 @@ Estalinhos;
 
 Você pode ler a thread sobre como foi o processo de criação do mod [aqui](https://x.com/feeeyli/status/1817360133489316329).
 
+**Stack**
+
+- Java
+- Forge 1.20.1

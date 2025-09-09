@@ -1,57 +1,57 @@
 ---
-import { getCollection } from 'astro:content';
-import { Cake, Link2, Tags } from 'lucide-astro';
-import Post from '../components/Post.astro';
-import Layout from '../layouts/Layout.astro';
+import { getCollection } from "astro:content";
+import { Cake, Link2, Tags } from "lucide-astro";
+import Post from "../components/Post.astro";
+import Layout from "../layouts/Layout.astro";
 
-const mdPosts = await getCollection('posts');
+const mdPosts = await getCollection("posts");
 
-const posts = mdPosts.map(post => ({
-	...post.data,
-	content: post.body
-}))
-
+const posts = mdPosts.map((post) => ({
+    ...post.data,
+    content: post.body,
+}));
 ---
 
 <Layout title="@feeeyli">
-	<main class="flex min-h-screen flex-col items-center">
-		<div class="max-w-[37rem] border-x border-x-[#eff3f4]">
-			<header>
-				<div class="relative">
-					<img
-						alt="banner"
-						src="https://cdn.bsky.app/img/banner/plain/did:plc:mywxnrqtqx4fcfbfwnwwa4cl/bafkreifnut2y5ndf6huz2qcs4matipkikxycxsmo5mv7t467tijicgi3dm@png"
-						width={1500}
-						height={500}
-						class="aspect-[1500/500] w-[37rem] select-none"
-					/>
-					<div class="absolute left-4 bottom-0 border-4 border-background inline-block rounded-full translate-y-1/2">
-						<img
-							alt="profile"
-							src="https://cdn.bsky.app/img/avatar/plain/did:plc:mywxnrqtqx4fcfbfwnwwa4cl/bafkreie5i5f52qzy5mtafwow2mnip4hjcxciw3oqztix2nrw34r5bvkxie@png"
-							width={400}
-							height={400}
-							class="rounded-full aspect-square w-32 select-none"
-						/>
-					</div>
-				</div>
-				<div class="mt-20 px-4 mb-4">
-					<div class="mt-1 mb-3">
-						<h1 class="text-xl text-[#0f1419] font-black">
-							luna 🐸🏳️‍⚧️
-						</h1>
-						<span class="text-[#536471] text-sm">
-							@feeeyli
-						</span>
-					</div>
-					<p class="text-sm mb-3 text-[#0f1419]">
-						oi, bem-vinde ao meu site 👋
-						<br />
-						aqui tu vai encontrar coisas sobre mim, sobre meus gostos e meus projetos ₊˚
-					</p>
-					<!-- <p class="text-sm mb-3 text-[#0f1419]">
+    <main class="flex min-h-screen flex-col items-center">
+        <div class="max-w-[37rem] border-x border-x-[#eff3f4]">
+            <header>
+                <div class="relative">
+                    <img
+                        alt="banner"
+                        src="https://cdn.bsky.app/img/banner/plain/did:plc:mywxnrqtqx4fcfbfwnwwa4cl/bafkreifnut2y5ndf6huz2qcs4matipkikxycxsmo5mv7t467tijicgi3dm@png"
+                        width={1500}
+                        height={500}
+                        class="aspect-[1500/500] w-[37rem] select-none"
+                    />
+                    <div
+                        class="absolute left-4 bottom-0 border-4 border-background inline-block rounded-full translate-y-1/2"
+                    >
+                        <img
+                            alt="profile"
+                            src="https://cdn.bsky.app/img/avatar/plain/did:plc:mywxnrqtqx4fcfbfwnwwa4cl/bafkreie5i5f52qzy5mtafwow2mnip4hjcxciw3oqztix2nrw34r5bvkxie@png"
+                            width={400}
+                            height={400}
+                            class="rounded-full aspect-square w-32 select-none"
+                        />
+                    </div>
+                </div>
+                <div class="mt-20 px-4 mb-4">
+                    <div class="mt-1 mb-3">
+                        <h1 class="text-xl text-[#0f1419] font-black">
+                            luna 🐸🏳️‍⚧️
+                        </h1>
+                        <span class="text-[#536471] text-sm"> @feeeyli </span>
+                    </div>
+                    <p class="text-sm mb-3 text-[#0f1419]">
+                        oi, bem-vinde ao meu site 👋
+                        <br />
+                        aqui tu vai encontrar coisas sobre mim, sobre meus gostos
+                        e meus projetos ₊˚
+                    </p>
+                    <!-- <p class="text-sm mb-3 text-[#0f1419]">
 						mestre de rpg, atriz e escritore ₊˚
-						<br /> 
+						<br />
 						criadora do:
 						<br />
 						&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://froggsmp.vercel.app" class="text-primary hover:underline">Site do FroggSMP</a> ₊˚
@@ -60,28 +60,31 @@ const posts = mdPosts.map(post => ({
 						<br />
 						&nbsp;&nbsp;&nbsp;&nbsp;e <a href="https://multiqsmp.vercel.app" class="text-primary hover:underline">MultiQSMP</a> ₊˚
 					</p> -->
-					<div class="text-sm mb-3 flex flex-wrap gap-3 text-[#536471]">
-						<span class="flex items-center gap-1">
-							<Tags size="1rem" /> elu/ela
-						</span>
-						<span class="flex items-center gap-1">
-							<Cake size="1rem" /> 18y
-						</span>
-						<span class="flex items-center gap-1">
-							<Link2 size="1rem" />
-							<a
-								href="https://x.com/feeeyli"
-								class="text-primary"
-							>
-								twitter.com/feeeyli
-							</a>
-						</span>
-					</div>
-				</div>
-			</header>
-			<ul>
-				{posts.map((post: any) => <Post post={post} />)}
-			</ul>
-		</div>
-	</main>
+                    <div
+                        class="text-sm mb-3 flex flex-wrap gap-3 text-[#536471]"
+                    >
+                        <span class="flex items-center gap-1">
+                            <Tags size="1rem" /> elu/ela
+                        </span>
+                        <span class="flex items-center gap-1">
+                            <Cake size="1rem" /> 18y
+                        </span>
+                        <span class="flex items-center gap-1">
+                            <Link2 size="1rem" />
+                            <a
+                                href="https://x.com/feeeyli"
+                                class="text-primary"
+                                target="_blank"
+                            >
+                                twitter.com/feeeyli
+                            </a>
+                        </span>
+                    </div>
+                </div>
+            </header>
+            <ul>
+                {posts.map((post: any) => <Post post={post} />)}
+            </ul>
+        </div>
+    </main>
 </Layout>

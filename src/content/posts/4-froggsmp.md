@@ -11,19 +11,22 @@ link: https://froggsmp.vercel.app
 id: froggsmp
 ---
 
-O site do [#FroggSMP](https://twitter.com/hashtag/FroggSMP) está finalmente lançado
+**Site do FroggSMP**
 
-nele você vai encontrar todos os streamers q estão em live no servidor
+Um site para juntar diversas informações sobre o FSMP em 1 só lugar, isso inclui:
 
-todos os participantes, suas redes sociais e links para a wiki de cada personagem
+- Todos os streamers q estão em live no servidor
 
-lista de eventos, tanto os que já aconteceram quanto os q ainda vão acontecer
+- Todos os participantes e suas redes sociais
 
-lista das atualizações diárias feitas pelo [@froggsmpnots](https://twitter.com/froggsmpnots)
+- Lista de eventos, tanto os que já aconteceram quanto os q ainda vão acontecer
 
-e acesso a todos os vods de todos os dias de servidor
+- Um sistema completo de multistream, possibilitando você assistir varias lives ao mesmo tempo de forma muito comoda
 
-espero que gostem pq foi feito com muito carinho \<33
+**Stack**
+
+- NextJS, Typescript e Tailwind
+- Zustand + Nuqs
 
 Acesse em [froggsmp.vercel.app](https://froggsmp.vercel.app)
-[Veja o repositorio](https://github.com/froggsmp)
+[Veja o repositorio](https://github.com/feeeyli/froggsmp-website)
